@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     && pecl install apcu imagick \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) xsl pdo_mysql gettext bcmath gd zip mbstring exif pcntl \
-    && docker-php-ext-enable apcu imagick \
+    && docker-php-ext-enable apcu imagick xsl pdo_mysql gettext bcmath gd zip mbstring exif pcntl  \
     && pecl clear-cache \
     && docker-php-source delete \
     && apt-get clean autoclean \
